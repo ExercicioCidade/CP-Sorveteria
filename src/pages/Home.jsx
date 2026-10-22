@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const moments = [
   { symbol: '♡', title: 'Seu momento de pausa', description: 'Entre uma tarefa e outra, sempre cabe um sorvete e um respiro.' },
   { symbol: '✳', title: 'Do seu jeito', description: 'Na casquinha ou no potinho, um sabor de cada vez ou sua combinação favorita.' },
@@ -14,7 +16,10 @@ export default function Home() {
           <p className="text-[10px] font-bold tracking-[.17em] md:text-[11px]">FEITO PARA DEIXAR O DIA MAIS GOSTOSO</p>
           <h1 className="mt-6 font-[Georgia,serif] text-[clamp(52px,6.5vw,94px)] leading-[1.03] font-bold tracking-[-.055em]" id="home-title">A felicidade<br />vem em <em className="font-normal text-[#4b1a08]">bolas.</em></h1>
           <p className="mt-6 max-w-90 text-base md:text-[17px]">Uma pausa no dia. Seu sabor favorito. E aquele sorvete que dá vontade de repetir.</p>
-          <a className="mt-8 inline-flex items-center gap-8 rounded-full bg-[#C25E50] px-6 py-4 text-xl font-bold text-white hover:bg-[#4b1a08] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#4b1a08]" href="#experiencia">Conheça a Artesanale <span aria-hidden="true">↗</span></a>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a className="inline-flex items-center gap-4 rounded-full bg-[#C25E50] px-5 py-3 text-base font-bold text-white hover:bg-[#4b1a08] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#4b1a08] sm:gap-8 sm:px-6 sm:py-4 sm:text-xl" href="#experiencia">Conheça a Artesanale <span aria-hidden="true">↗</span></a>
+            <Link className="rounded-sm text-sm font-bold text-[#4b1a08] underline underline-offset-4 hover:text-[#C25E50] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#4b1a08]" to="/produtos">Explorar sabores</Link>
+          </div>
           <p className="mt-4 text-xs">Pode vir. A parte difícil é escolher.</p>
         </div>
         <div className="relative isolate h-[480px] max-[1001px]:-m-[25px] max-[1001px]:scale-[.88] max-md:mx-[-12px] max-md:mt-[-12px] max-md:mb-[-40px] max-md:h-[440px] max-md:scale-[.85]" role="img" aria-label="Casquinha com bolas de sorvete de morango, creme e pistache">

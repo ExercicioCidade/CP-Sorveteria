@@ -1,95 +1,36 @@
-
-import { useEffect, useState } from "react"
+import { products } from '../data/products'
 
 const Cards = () => {
-  const sabores = [
-    {
-      id: 1,
-      title: "Sorvete de Banoffee",
-      description: "Uma combinação irresistível de banana caramelizada, doce de leite cremoso e um toque de canela.",
-      price: 11.99,
-      image: "src/assets/banoffee.png"
-    },
-    {
-      id: 2,
-      title: "Sorvete de Chocolate Belga",
-      description: "Feito com chocolate belga intenso, textura aveludada e sabor marcante para os verdadeiros amantes de chocolate.",
-      price: 14.99,
-      image: "src/assets/chocolate_belga.png"
-    },
-    {
-      id: 3,
-      title: "Sorvete de Paçoca",
-      description: "Cremoso e cheio de sabor, com o gostinho irresistível do amendoim e da tradicional paçoca brasileira.",
-      price: 9.99,
-      image: "src/assets/pacoca.png"
-    },
-    {
-      id: 4,
-      title: "Sorvete de Doce de Leite",
-      description: "Sorvete suave e cremoso, preparado com o sabor rico do doce de leite e deliciosos fios caramelizados.",
-      price: 11.99,
-      image: "src/assets/doce_de_leite.png"
-    },
-    {
-      id: 5,
-      title: "Sorvete de Floresta Negra",
-      description: "Uma deliciosa mistura de chocolate, cerejas e pedaços de bolo, inspirada na clássica sobremesa alemã.",
-      price: 15.99,
-      image: "src/assets/floresta_negra.png"
-    },
-    {
-      id: 6,
-      title: "Sorvete de Chocomenta",
-      description: "A combinação refrescante da menta com o chocolate, unindo cremosidade, frescor e pedacinhos crocantes.",
-      price: 12.99,
-      image: "src/assets/chocomenta.png"
-    },
-    {
-      id: 7,
-      title: "Sorvete de Pistache",
-      description: "Um sorvete sofisticado e irresistivelmente cremoso, feito com o sabor marcante do pistache, notas levemente amanteigadas e um toque delicado de doçura. Uma experiência única para quem aprecia sabores refinados!",
-      price: 13.99,
-      image: "src/assets/pistache.png"
-    },
-  ];
-
   return (
-    <div className="bg-[#F7F4EE]">
-      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {sabores.map((sabor) => (
-            <div
-            key={sabor.id}
-            className="rounded-xl border border-gray-200 bg-[#849B83] p-5 shadow-sm transition hover:shadow-md"
-            >
-            <img src={sabor.image}
-                alt = {sabor.title}
-                className="w-full rounded-2xl h-48 object-cover mb-4"/>
-            <h3 className="mb-2 text-lg font-semibold text-[#4b1a0e]">
-              {sabor.title}
-            </h3>
-
-            <p className="text-sm text-[#4b1a0e]">
-              {sabor.description}
+    <section className="mx-auto max-w-[1200px] px-6 pb-16 md:px-8" aria-label="Sabores disponíveis">
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {products.map((product) => (
+          <li
+            key={product.id}
+            className="flex h-full flex-col rounded-2xl border border-[#849B83]/50 bg-[#E7EAE2] p-4"
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className="mb-5 aspect-[4/3] w-full rounded-xl object-cover"
+            />
+            <h2 className="font-[Georgia,serif] text-2xl text-[#4b1a08]">
+              {product.name}
+            </h2>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-[#4b1a08]">
+              {product.description}
             </p>
-
-            <p className="mt-4 text-center text-xl font-bold text-black">
-              {sabor.price.toLocaleString("pt-BR", {
-                style: "currency",
-                currency: "BRL",
+            <p className="mt-5 text-xl font-bold text-[#4b1a08]">
+              {product.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
               })}
             </p>
-
-            <div className="mt-2 flex justify-center">
-              <button className="w-1/2 rounded-2xl bg-[#C25E50] px-4 py-1 text-lg font-semibold text-gray-300 hover:bg-red-700">
-                Comprar
-              </button>
-            </div>
-          </div>
+          </li>
         ))}
-      </div>
-    </div>
-  );
-};
+      </ul>
+    </section>
+  )
+}
 
-export default Cards;
+export default Cards
