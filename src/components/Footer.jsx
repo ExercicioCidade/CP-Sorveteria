@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="w-full border-current bg-linear-to-b from-[#f7f4ee] to-[#4b1a0e] ">
+        <footer className="w-full border-current bg-linear-to-b from-[#f7f4ee] to-[#849b83] ">
             <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
 
                 <div className="sm:col-span-2 lg:col-span-1 text-[#4b1a0e]">
@@ -97,7 +97,7 @@ const Footer = () => {
 
             </div>
 
-            <div className="border-current mx-auto flex max-w-7xl flex-col gap-5 px-6 py-6 text-xs lg:flex-row lg:items-center lg:justify-between lg:px-8 text-white">
+            <div className="border-y border-current mx-auto flex max-w-7xl flex-col gap-5 px-6 py-6 text-xs lg:flex-row lg:items-center lg:justify-between lg:px-8  text-[#4b1a0e]">
 
                 <div className="flex flex-wrap gap-4 opacity-70 text-[#4b1a0e]">
                     <span>🔒 Compra segura</span>
