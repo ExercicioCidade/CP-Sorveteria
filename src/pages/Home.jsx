@@ -1,27 +1,21 @@
-import { useState } from 'react'
 import './Home.css'
 
-const flavors = [
-  { name: 'Morango', category: 'Frutas', color: 'strawberry', description: 'Leve, frutado e com aquele gostinho de quero mais.' },
-  { name: 'Chocolate', category: 'Clássicos', color: 'chocolate', description: 'Intenso e cremoso. Um clássico que abraça a gente.' },
-  { name: 'Pistache', category: 'Especiais', color: 'pistachio', description: 'Um sabor delicado para sair um pouquinho do comum.' },
-  { name: 'Creme', category: 'Clássicos', color: 'cream', description: 'Suave e cheio de possibilidades. Combina com tudo.' },
+const moments = [
+  { symbol: '♡', title: 'Seu momento de pausa', description: 'Entre uma tarefa e outra, sempre cabe um sorvete e um respiro.' },
+  { symbol: '✳', title: 'Do seu jeito', description: 'Na casquinha ou no potinho, um sabor de cada vez ou sua combinação favorita.' },
+  { symbol: '☺', title: 'Melhor com companhia', description: 'Chame os amigos, coloque a conversa em dia e divida bons momentos.' },
 ]
-const categories = ['Todos', 'Clássicos', 'Frutas', 'Especiais']
 
 export default function Home() {
-  const [category, setCategory] = useState('Todos')
-  const visibleFlavors = flavors.filter((flavor) => category === 'Todos' || flavor.category === category)
-
   return (
-    <main className="ice-home" id="inicio">
-      <section className="ice-hero" aria-labelledby="home-title">
-        <div className="ice-hero-copy">
-          <p className="ice-eyebrow">FEITO PARA DEIXAR O DIA MAIS GOSTOSO</p>
-          <h1 id="home-title">A felicidade<br />vem em <em>bolas.</em></h1>
-          <p className="ice-intro">Uma pausa no dia. Seu sabor favorito. E aquele sorvete que dá vontade de repetir.</p>
-          <a className="ice-button" href="#sabores">Encontre seu sabor <span aria-hidden="true">↗</span></a>
-          <p className="ice-small-note">Pode vir. A parte difícil é escolher.</p>
+    <main className="ice-home bg-[#fffaf5] font-[Trebuchet_MS,Arial,sans-serif] leading-relaxed text-[#442b30]" id="inicio">
+      <section className="grid items-center gap-4 overflow-hidden bg-[#f9e4e8] px-6 pt-12 pb-8 md:grid-cols-2 md:gap-10 md:px-[6vw] md:py-20 xl:px-[max(6vw,calc((100vw-1200px)/2))]" aria-labelledby="home-title">
+        <div>
+          <p className="text-[10px] font-bold tracking-[.17em] md:text-[11px]">FEITO PARA DEIXAR O DIA MAIS GOSTOSO</p>
+          <h1 className="mt-6 font-[Georgia,serif] text-[clamp(52px,6.5vw,94px)] leading-[1.03] font-bold tracking-[-.055em]" id="home-title">A felicidade<br />vem em <em className="font-normal text-[#ad3451]">bolas.</em></h1>
+          <p className="mt-6 max-w-90 text-base md:text-[17px]">Uma pausa no dia. Seu sabor favorito. E aquele sorvete que dá vontade de repetir.</p>
+          <a className="mt-8 inline-flex items-center gap-8 rounded-full bg-[#ad3451] px-6 py-4 font-bold text-white hover:bg-[#87243d] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#442b30]" href="#experiencia">Conheça nossa sorveteria <span aria-hidden="true">↗</span></a>
+          <p className="mt-4 text-xs">Pode vir. A parte difícil é escolher.</p>
         </div>
         <div className="ice-hero-art" role="img" aria-label="Casquinha com bolas de sorvete de morango, creme e pistache">
           <span className="ice-art-caption">Uma casquinha de alegria</span>
@@ -35,40 +29,28 @@ export default function Home() {
           <span className="ice-art-stamp">MAIS SABOR<br />POR FAVOR!</span>
         </div>
       </section>
-      <div className="ice-ribbon" aria-label="Sorvete, boas conversas e momentos felizes">
-        <span>Sorvete na mão</span><span aria-hidden="true">✳</span>
-        <span>Boas conversas</span><span aria-hidden="true">✳</span>
+      <div className="flex items-center justify-center gap-3 bg-[#dce8be] px-4 py-4 text-center text-[11px] font-bold md:gap-12 md:text-[15px]" aria-label="Sorvete, boas conversas e momentos felizes">
+        <span>Sorvete na mão</span><span className="text-xl" aria-hidden="true">✳</span>
+        <span>Boas conversas</span><span className="text-xl" aria-hidden="true">✳</span>
         <span>Momentos felizes</span>
       </div>
-      <section className="ice-flavors" id="sabores" aria-labelledby="flavors-title">
-        <div className="ice-section-heading">
+      <section className="mx-auto max-w-300 scroll-mt-6 px-6 py-12 md:px-8 md:py-20" id="experiencia" aria-labelledby="experience-title">
+        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end md:gap-8">
           <div>
-            <p className="ice-eyebrow">QUAL VAI SER O DE HOJE?</p>
-            <h2 id="flavors-title">Seu próximo favorito.</h2>
+            <p className="text-[11px] font-bold tracking-[.17em]">UM CONVITE PARA APROVEITAR</p>
+            <h2 className="mt-3 font-[Georgia,serif] text-[clamp(32px,4vw,48px)] leading-tight tracking-[-.04em]" id="experience-title">Um sorvete. Muitas histórias.</h2>
           </div>
-          <p>Dos clássicos de sempre às novas paixões.<br />Tem um sabor para cada vontade.</p>
+          <p className="max-w-75 text-sm">Dos clássicos de sempre às novas paixões. Tem um sabor para cada vontade.</p>
         </div>
-        <div className="ice-filters" role="group" aria-label="Filtrar sabores por categoria">
-          {categories.map((item) => (
-            <button key={item} type="button" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>
+        <ul className="mt-10 grid gap-8 border-t border-[#e5cfd1] pt-8 md:grid-cols-3 md:gap-10">
+          {moments.map((moment) => (
+            <li key={moment.title}>
+              <span className="text-3xl text-[#ad3451]" aria-hidden="true">{moment.symbol}</span>
+              <h3 className="mt-4 font-[Georgia,serif] text-2xl">{moment.title}</h3>
+              <p className="mt-3 max-w-80 text-sm">{moment.description}</p>
+            </li>
           ))}
-        </div>
-        <p className="ice-result-count" role="status">{visibleFlavors.length} {visibleFlavors.length === 1 ? 'sabor para experimentar' : 'sabores para experimentar'}</p>
-        <div className="ice-flavor-grid">
-          {visibleFlavors.map((flavor) => (
-            <article className="ice-flavor-card" key={flavor.name}>
-              <div className={`ice-flavor-image ice-flavor-image-${flavor.color}`} aria-hidden="true">
-                <span className="ice-flavor-ball" />
-                <span className="ice-flavor-cup" />
-              </div>
-              <div className="ice-flavor-content">
-                <span className="ice-flavor-category">{flavor.category}</span>
-                <h3>{flavor.name}</h3>
-                <p>{flavor.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        </ul>
       </section>
     </main>
   )
