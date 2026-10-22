@@ -8,13 +8,15 @@ const moments = [
 
 export default function Home() {
   return (
-    <main className="ice-home bg-[#fffaf5] font-[Trebuchet_MS,Arial,sans-serif] leading-relaxed text-[#442b30]" id="inicio">
-      <section className="grid items-center gap-4 overflow-hidden bg-[#f9e4e8] px-6 pt-12 pb-8 md:grid-cols-2 md:gap-10 md:px-[6vw] md:py-20 xl:px-[max(6vw,calc((100vw-1200px)/2))]" aria-labelledby="home-title">
+    <main className="ice-home bg-[#F7F4EE] font-[Trebuchet_MS,Arial,sans-serif] leading-relaxed text-[#4b1a08]" id="inicio">
+      <title>Artesanale Gelateria</title>
+      <section className="grid items-center gap-4 overflow-hidden bg-[#F7F4EE] px-6 pt-12 pb-8 md:grid-cols-2 md:gap-10 md:px-[6vw] md:py-20 xl:px-[max(6vw,calc((100vw-1200px)/2))]" aria-labelledby="home-title">
         <div>
+          <p className="mb-5 font-[Georgia,serif] text-2xl font-bold tracking-tight">Artesanale Gelateria</p>
           <p className="text-[10px] font-bold tracking-[.17em] md:text-[11px]">FEITO PARA DEIXAR O DIA MAIS GOSTOSO</p>
-          <h1 className="mt-6 font-[Georgia,serif] text-[clamp(52px,6.5vw,94px)] leading-[1.03] font-bold tracking-[-.055em]" id="home-title">A felicidade<br />vem em <em className="font-normal text-[#ad3451]">bolas.</em></h1>
+          <h1 className="mt-6 font-[Georgia,serif] text-[clamp(52px,6.5vw,94px)] leading-[1.03] font-bold tracking-[-.055em]" id="home-title">A felicidade<br />vem em <em className="font-normal text-[#4b1a08]">bolas.</em></h1>
           <p className="mt-6 max-w-90 text-base md:text-[17px]">Uma pausa no dia. Seu sabor favorito. E aquele sorvete que dá vontade de repetir.</p>
-          <a className="mt-8 inline-flex items-center gap-8 rounded-full bg-[#ad3451] px-6 py-4 font-bold text-white hover:bg-[#87243d] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#442b30]" href="#experiencia">Conheça nossa sorveteria <span aria-hidden="true">↗</span></a>
+          <a className="mt-8 inline-flex items-center gap-8 rounded-full bg-[#C25E50] px-6 py-4 text-xl font-bold text-white hover:bg-[#4b1a08] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#4b1a08]" href="#experiencia">Conheça a Artesanale <span aria-hidden="true">↗</span></a>
           <p className="mt-4 text-xs">Pode vir. A parte difícil é escolher.</p>
         </div>
         <div className="ice-hero-art" role="img" aria-label="Casquinha com bolas de sorvete de morango, creme e pistache">
@@ -29,7 +31,7 @@ export default function Home() {
           <span className="ice-art-stamp">MAIS SABOR<br />POR FAVOR!</span>
         </div>
       </section>
-      <div className="flex items-center justify-center gap-3 bg-[#dce8be] px-4 py-4 text-center text-[11px] font-bold md:gap-12 md:text-[15px]" aria-label="Sorvete, boas conversas e momentos felizes">
+      <div className="flex items-center justify-center gap-3 bg-[#849B83] px-4 py-4 text-center text-[11px] font-bold md:gap-12 md:text-[15px]" aria-label="Sorvete, boas conversas e momentos felizes">
         <span>Sorvete na mão</span><span className="text-xl" aria-hidden="true">✳</span>
         <span>Boas conversas</span><span className="text-xl" aria-hidden="true">✳</span>
         <span>Momentos felizes</span>
@@ -42,10 +44,10 @@ export default function Home() {
           </div>
           <p className="max-w-75 text-sm">Dos clássicos de sempre às novas paixões. Tem um sabor para cada vontade.</p>
         </div>
-        <ul className="mt-10 grid gap-8 border-t border-[#e5cfd1] pt-8 md:grid-cols-3 md:gap-10">
+        <ul className="mt-10 grid gap-8 border-t border-[#849B83] pt-8 md:grid-cols-3 md:gap-10">
           {moments.map((moment) => (
             <li key={moment.title}>
-              <span className="text-3xl text-[#ad3451]" aria-hidden="true">{moment.symbol}</span>
+              <span className="text-3xl text-[#4b1a08]" aria-hidden="true">{moment.symbol}</span>
               <h3 className="mt-4 font-[Georgia,serif] text-2xl">{moment.title}</h3>
               <p className="mt-3 max-w-80 text-sm">{moment.description}</p>
             </li>
