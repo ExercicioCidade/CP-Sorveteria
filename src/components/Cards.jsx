@@ -7,43 +7,50 @@ const Cards = () => {
       id: 1,
       title: "Sorvete de Banoffee",
       description: "Uma combinação irresistível de banana caramelizada, doce de leite cremoso e um toque de canela.",
-      price: 12.00,
+      price: 11.99,
       image: "src/assets/banoffee.png"
     },
     {
       id: 2,
       title: "Sorvete de Chocolate Belga",
       description: "Feito com chocolate belga intenso, textura aveludada e sabor marcante para os verdadeiros amantes de chocolate.",
-      price: 15.00,
+      price: 14.99,
       image: "src/assets/chocolate_belga.png"
     },
     {
       id: 3,
       title: "Sorvete de Paçoca",
       description: "Cremoso e cheio de sabor, com o gostinho irresistível do amendoim e da tradicional paçoca brasileira.",
-      price: 10.00,
+      price: 9.99,
       image: "src/assets/pacoca.png"
     },
     {
       id: 4,
       title: "Sorvete de Doce de Leite",
       description: "Sorvete suave e cremoso, preparado com o sabor rico do doce de leite e deliciosos fios caramelizados.",
-      price: 12.00,
+      price: 11.99,
       image: "src/assets/doce_de_leite.png"
     },
     {
       id: 5,
       title: "Sorvete de Floresta Negra",
       description: "Uma deliciosa mistura de chocolate, cerejas e pedaços de bolo, inspirada na clássica sobremesa alemã.",
-      price: 16.00,
+      price: 15.99,
       image: "src/assets/floresta_negra.png"
     },
     {
       id: 6,
       title: "Sorvete de Chocomenta",
       description: "A combinação refrescante da menta com o chocolate, unindo cremosidade, frescor e pedacinhos crocantes.",
-      price: 13.00,
+      price: 12.99,
       image: "src/assets/chocomenta.png"
+    },
+    {
+      id: 7,
+      title: "Sorvete de Pistache",
+      description: "A combinação refrescante da menta com o chocolate, unindo cremosidade, frescor e pedacinhos crocantes.",
+      price: 13.99,
+      image: "src/assets/pistache.png"
     },
   ];
 
