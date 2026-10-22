@@ -2,32 +2,34 @@ import { products } from '../data/products'
 
 const Cards = () => {
   return (
-    <div className="bg-[#F7F4EE]">
-      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <section className="mx-auto max-w-[1200px] px-6 pb-16 md:px-8" aria-label="Sabores disponíveis">
+      <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
-          <div
+          <li
             key={product.id}
-            className="rounded-xl border border-gray-200 bg-[#849B83] p-5 shadow-sm transition hover:shadow-md"
+            className="flex h-full flex-col rounded-2xl border border-[#849B83]/50 bg-[#E7EAE2] p-4"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="mb-4 h-48 w-full rounded-2xl object-cover"
+              className="mb-5 aspect-[4/3] w-full rounded-xl object-cover"
             />
-            <h3 className="mb-2 text-lg font-semibold text-[#4b1a0e]">
+            <h2 className="font-[Georgia,serif] text-2xl text-[#4b1a08]">
               {product.name}
-            </h3>
-            <p className="text-sm text-[#4b1a0e]">{product.description}</p>
-            <p className="mt-4 text-center text-xl font-bold text-black">
+            </h2>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-[#4b1a08]">
+              {product.description}
+            </p>
+            <p className="mt-5 text-xl font-bold text-[#4b1a08]">
               {product.price.toLocaleString('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
               })}
             </p>
-          </div>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   )
 }
 
