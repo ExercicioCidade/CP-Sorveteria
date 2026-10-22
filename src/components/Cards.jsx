@@ -1,6 +1,9 @@
 import { products } from '../data/products'
+import { useCart } from '../context/CartContext'
 
 const Cards = () => {
+  const { addToCart } = useCart()
+
   return (
     <section className="mx-auto max-w-[1200px] px-6 pb-16 md:px-8" aria-label="Sabores disponíveis">
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -26,6 +29,14 @@ const Cards = () => {
                 currency: 'BRL',
               })}
             </p>
+            <button
+              type="button"
+              aria-label={`Adicionar ${product.name} ao carrinho`}
+              onClick={() => addToCart(product)}
+              className="mt-4 min-h-11 rounded-full bg-[#C25E50] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#4b1a08] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#4b1a08]"
+            >
+              Adicionar ao carrinho
+            </button>
           </li>
         ))}
       </ul>
