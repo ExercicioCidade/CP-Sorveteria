@@ -35,3 +35,26 @@
 .ice-home .ice-art-stamp { position: absolute; left: 0; bottom: 20px; width: 105px; height: 105px; display: grid; place-content: center; border: 1px solid var(--ice-berry); border-radius: 50%; text-align: center; font-size: 12px; line-height: 1.5; letter-spacing: .08em; color: var(--ice-berry); transform: rotate(-14deg); }
 .ice-home .ice-ribbon { display: flex; justify-content: center; align-items: center; gap: 48px; padding: 18px 24px; background: var(--ice-green); font-size: 15px; font-weight: 700; }
 .ice-home .ice-ribbon span[aria-hidden] { font-size: 24px; }
+.ice-home .ice-flavors { max-width: 1200px; margin: auto; padding: 80px 32px; scroll-margin-top: 24px; }
+.ice-home .ice-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+.ice-home h2 { font: 400 clamp(32px, 4vw, 48px)/1.15 Georgia, serif; letter-spacing: -.04em; margin-top: 12px; }
+.ice-home .ice-section-heading > p { font-size: 14px; }
+.ice-home .ice-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.ice-home .ice-filters button { padding: 9px 20px; border: 1px solid #ddcbd0; border-radius: 24px; color: var(--ice-ink); background: transparent; font: inherit; font-size: 13px; cursor: pointer; }
+.ice-home .ice-filters button:hover { border-color: var(--ice-berry); }
+.ice-home .ice-filters button[aria-pressed='true'] { background: var(--ice-ink); color: white; border-color: var(--ice-ink); }
+.ice-home button:focus-visible { outline: 3px solid var(--ice-berry); outline-offset: 4px; }
+.ice-home .ice-result-count { font-size: 12px; margin: 18px 0 12px; color: #725c61; }
+.ice-home .ice-flavor-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.ice-home .ice-flavor-card { overflow: hidden; border-radius: 16px; border: 1px solid #eddfd9; background: #fffdf9; }
+.ice-home .ice-flavor-image { height: 220px; position: relative; overflow: hidden; background: var(--flavor-bg); }
+.ice-home .ice-flavor-image-strawberry { --flavor-bg: #f7dce3; --flavor-color: #ed9eaf; }
+.ice-home .ice-flavor-image-chocolate { --flavor-bg: #ebdcd2; --flavor-color: #885b47; }
+.ice-home .ice-flavor-image-pistachio { --flavor-bg: #e5ebd2; --flavor-color: #bed191; }
+.ice-home .ice-flavor-image-cream { --flavor-bg: #f8ebd0; --flavor-color: #ffedbf; }
+.ice-home .ice-flavor-ball { position: absolute; width: 128px; height: 112px; border-radius: 49% 47% 42% 44%; background: var(--flavor-color); left: calc(50% - 64px); top: 35px; box-shadow: inset -14px -12px 20px #442b3020, inset 8px 8px 12px #ffffff50; }
+.ice-home .ice-flavor-cup { position: absolute; width: 128px; height: 83px; left: calc(50% - 64px); top: 128px; background: repeating-linear-gradient(90deg, #fffaf5 0 12px, #f4e5db 12px 14px); clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%); }
+.ice-home .ice-flavor-content { padding: 22px; }
+.ice-home .ice-flavor-category { font-size: 10px; text-transform: uppercase; letter-spacing: .12em; color: #725c61; }
+.ice-home h3 { font: 400 27px/1.2 Georgia, serif; margin-top: 8px; }
+.ice-home .ice-flavor-content p { font-size: 13px; margin-top: 10px; }
