@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../context/cart-context'
 
 const foco =
   'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4B1A08]'
@@ -11,6 +12,7 @@ const estiloLink = ({ isActive }) =>
 
 const NavBar = () => {
   const [menuAberto, setMenuAberto] = useState(false)
+  const { totalItems } = useCart()
 
   const fecharMenu = () => setMenuAberto(false)
 
@@ -41,16 +43,32 @@ const NavBar = () => {
           Sorveteria
         </NavLink>
 
-        <button
-          type="button"
-          aria-controls="navbar-links"
-          aria-expanded={menuAberto}
-          aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
-          onClick={() => setMenuAberto((aberto) => !aberto)}
-          className={`navbar-toggle inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-[#4B1A08] px-3 py-2 hover:bg-[#4B1A08] hover:text-[#F7F4EE] aria-expanded:bg-[#4B1A08] aria-expanded:text-[#F7F4EE] sm:hidden ${foco}`}
-        >
-          {menuAberto ? 'Fechar ✕' : 'Menu ☰'}
-        </button>
+        <div className="flex items-center gap-3">
+          <NavLink
+            to="/carrinho"
+            onClick={fecharMenu}
+            aria-label={`Carrinho com ${totalItems} ${totalItems === 1 ? 'item' : 'itens'}`}
+            aria-live="polite"
+            aria-atomic="true"
+            className={({ isActive }) =>
+              `rounded-full bg-[#E7EAE2] px-3 py-2 text-sm font-semibold ${foco} ${
+                isActive ? 'ring-2 ring-[#4B1A08]' : ''
+              }`
+            }
+          >
+            {totalItems} {totalItems === 1 ? 'item' : 'itens'} no carrinho
+          </NavLink>
+          <button
+            type="button"
+            aria-controls="navbar-links"
+            aria-expanded={menuAberto}
+            aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
+            onClick={() => setMenuAberto((aberto) => !aberto)}
+            className={`navbar-toggle inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg border border-[#4B1A08] px-3 py-2 hover:bg-[#4B1A08] hover:text-[#F7F4EE] aria-expanded:bg-[#4B1A08] aria-expanded:text-[#F7F4EE] sm:hidden ${foco}`}
+          >
+            {menuAberto ? 'Fechar ✕' : 'Menu ☰'}
+          </button>
+        </div>
 
         <div
           id="navbar-links"

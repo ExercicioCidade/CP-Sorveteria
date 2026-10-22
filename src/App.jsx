@@ -1,22 +1,24 @@
-import Footer from './components/Footer'
-import Cards from './components/Cards'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
+import NavBar from './components/NavBar'
+import { CartProvider } from './context/CartContext'
+import Cart from './pages/Cart'
 import Home from './pages/Home'
 import Products from './pages/Products'
-import NavBar from './components/NavBar'
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar/>
+    <BrowserRouter>
+      <CartProvider>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/produtos" element={<Products />} />
+          <Route path="/carrinho" element={<Cart />} />
         </Routes>
-      <Footer/>
-      </BrowserRouter>
-    </>
+        <Footer />
+      </CartProvider>
+    </BrowserRouter>
   )
 }
 
