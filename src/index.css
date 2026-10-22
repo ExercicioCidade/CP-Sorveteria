@@ -1,1 +1,95 @@
 @import 'tailwindcss';
+/* Sublinhado animado dos links */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link:focus-visible::after,
+.navbar-link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+/* Transições do botão de ação */
+.navbar-action {
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.navbar-action:hover,
+.navbar-action:focus-visible {
+  transform: translateY(-2px);
+}
+
+.navbar-action:active {
+  transform: translateY(0);
+}
+
+/* Transições do botão do menu */
+.navbar-toggle {
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-link::after,
+  .navbar-action,
+  .navbar-toggle {
+    transition: none;
+  }
+
+  .navbar-action:hover,
+  .navbar-action:focus-visible {
+    transform: none;
+  }
+}
+@keyframes navbar-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navbar-menu-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  animation: navbar-entrada 350ms ease-out;
+}
+
+@media (width < 40rem) {
+  .navbar-links[data-open='true'] {
+    animation: navbar-menu-entrada 220ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-links[data-open='true'] {
+    animation: none;
+  }
+}
