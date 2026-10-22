@@ -37,7 +37,63 @@ const Footer = () => {
                 </div>
 
 
+                <div>
+                    <h3>
+                        Ajuda
+                    </h3>
 
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Perguntas frequentes
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Trocas e devoluções
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Prazo de entrega
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Formas de pagamento
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>
+                        Atendimento
+                    </h3>
+
+                    <ul>
+                        <li>
+                            <a href="#">
+                                WhatsApp: 📞 (11) 99999-9999
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                E-mail:✉️ contato@artgelat.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <span>
+                                📅 Seg — Sex, 9h às 18h
+                            </span>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
 
