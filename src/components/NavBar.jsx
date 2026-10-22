@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/cart-context'
 
 const foco =
   'focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4B1A08]'
@@ -44,13 +44,20 @@ const NavBar = () => {
         </NavLink>
 
         <div className="flex items-center gap-3">
-          <span
-            className="rounded-full bg-[#E7EAE2] px-3 py-2 text-sm font-semibold"
+          <NavLink
+            to="/carrinho"
+            onClick={fecharMenu}
+            aria-label={`Carrinho com ${totalItems} ${totalItems === 1 ? 'item' : 'itens'}`}
             aria-live="polite"
             aria-atomic="true"
+            className={({ isActive }) =>
+              `rounded-full bg-[#E7EAE2] px-3 py-2 text-sm font-semibold ${foco} ${
+                isActive ? 'ring-2 ring-[#4B1A08]' : ''
+              }`
+            }
           >
             {totalItems} {totalItems === 1 ? 'item' : 'itens'} no carrinho
-          </span>
+          </NavLink>
           <button
             type="button"
             aria-controls="navbar-links"

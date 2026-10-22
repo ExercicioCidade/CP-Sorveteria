@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { products } from '../data/products'
+import { CartContext } from './cart-context'
 
-const CartContext = createContext(null)
 const storageKey = 'sorveteria-cart'
 
 const readCart = () => {
@@ -43,7 +43,9 @@ export function CartProvider({ children }) {
       }))
 
       window.localStorage.setItem(storageKey, JSON.stringify(savedItems))
-    } catch {}
+    } catch {
+      return
+    }
   }, [items])
 
   const addToCart = (product) => {
@@ -120,14 +122,4 @@ export function CartProvider({ children }) {
       {children}
     </CartContext.Provider>
   )
-}
-
-export function useCart() {
-  const context = useContext(CartContext)
-
-  if (context === null) {
-    throw new Error('useCart deve ser usado dentro de CartProvider')
-  }
-
-  return context
 }

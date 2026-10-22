@@ -1,5 +1,5 @@
 import { products } from '../data/products'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/cart-context'
 
 const Cards = () => {
   const { addToCart } = useCart()
