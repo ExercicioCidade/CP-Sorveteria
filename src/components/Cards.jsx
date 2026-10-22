@@ -48,7 +48,7 @@ const Cards = () => {
     {
       id: 7,
       title: "Sorvete de Pistache",
-      description: "A combinação refrescante da menta com o chocolate, unindo cremosidade, frescor e pedacinhos crocantes.",
+      description: "Um sorvete sofisticado e irresistivelmente cremoso, feito com o sabor marcante do pistache, notas levemente amanteigadas e um toque delicado de doçura. Uma experiência única para quem aprecia sabores refinados!",
       price: 13.99,
       image: "src/assets/pistache.png"
     },
